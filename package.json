@@ -1,0 +1,16 @@
+{
+  "name": "markdowntweets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "marked": "^0.3.6",
+    "phantom-render-stream": "^2.2.0",
+    "webshot": "^0.18.0"
+  }
+}
