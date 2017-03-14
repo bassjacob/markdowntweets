@@ -25,6 +25,8 @@ marked.setOptions({
   smartypants: false
 });
 
+app.use(express.static('public'))
+
 app.use(bodyparser.json());
 
 const x = y => `<html>
@@ -46,7 +48,7 @@ app.post('/tweets', (req, res, next) => {
     s.push(x(marked(message)));
     s.push(null);
 
-    const filename = crypto.createHash('md5').update(message).digest('hex') + '.png';
+    const filename = 'public/' + crypto.createHash('md5').update(message).digest('hex') + '.png';
     const writeStream = fs.createWriteStream(filename);
 
     writeStream.on('close', () => res.send());
